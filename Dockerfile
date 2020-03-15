@@ -8,9 +8,7 @@ RUN npm install -g yarn
 RUN mkdir -p /app
 
 COPY . /app
-
 WORKDIR /app
-
 RUN bundle install
 
 EXPOSE 3000
