@@ -11,6 +11,7 @@ COPY . /app
 WORKDIR /app
 RUN bundle install
 RUN rake db:migrate
+RUN rake assets:precompile
 
 EXPOSE 3000
 
