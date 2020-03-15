@@ -10,6 +10,7 @@ RUN mkdir -p /app
 COPY . /app
 WORKDIR /app
 RUN bundle install
+RUN rake db:migrate
 
 EXPOSE 3000
 
