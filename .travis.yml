@@ -22,6 +22,4 @@ install:
   - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
   - docker push $DOCKER_HUB_USERNAME/resto:$CI_COMMIT
   - ssh $DEPLOYMENT_HOST "docker pull $DOCKER_HUB_USERNAME/resto:$CI_COMMIT"
-  - ssh $DEPLOYMENT_HOST "docker container stop kulguy-resto"
-  - ssh $DEPLOYMENT_HOST "docker container rm kulguy-resto"
   - ssh $DEPLOYMENT_HOST "docker run --name kulguy-resto -d -p 9024:3000 $DOCKER_HUB_USERNAME/resto:$CI_COMMIT --binding=0.0.0.0"
