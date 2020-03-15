@@ -1,7 +1,7 @@
 FROM ruby:2.7.0
 
 RUN apt-get update -y
-RUN apt-get install -y nodejs postgresql-client
+RUN apt-get install -y nodejs
 RUN curl -L https://npmjs.org/install.sh | sh
 RUN npm install -g yarn
 
